@@ -29,7 +29,9 @@
           <%= image_tag('facebook.png', height: '50', width: '50', :style => "margin-right:-41px", :class =>"hide_in_tablet hide_in_phone") %></li>
 				<% end %>
 	</ul>
-
+ <% if current_facer.try(:admin) %>
+ <h1>I am Admin</h1>
+ <% end %>
 <%= yield %>
 
 </body>
