@@ -16,6 +16,18 @@ ActiveRecord::Schema.define(version: 20150907225709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "facers", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.string   "image"
+    t.datetime "oauth_expires_at"
+    t.boolean  "admin"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "name"
     t.string   "comment"

@@ -7,6 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+ 	<ul>
+      <% if current_facer %>
+
+            <li><%= link_to "إدراج نشاط", "#" %></li>
+            <% if (current_facer.admin?) %>
+            <li ><strong> <%= link_to "الانتظار", "#" %></strong></li>
+       		<% end %>
+            <li><a href="#">عقار للبيع</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "خروج",signout_path,id: "sign_out" %></li>
+    
+       
+
+          <%= image_tag(current_facer.image, height: '50', width: '50', :style => "margin-right:-41px", :class =>"hide_in_tablet hide_in_phone") %></li>
+
+				<% else %>
+				<li><%= link_to "سجّل مع فيس بوك", "/auth/facebook", id: "sign_in" %></li>
+        <li>
+
+          <%= image_tag('facebook.png', height: '50', width: '50', :style => "margin-right:-41px", :class =>"hide_in_tablet hide_in_phone") %></li>
+				<% end %>
+	</ul>
 
 <%= yield %>
 
