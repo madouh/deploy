@@ -19,6 +19,7 @@
     <%= f.label :comment %><br>
     <%= f.text_field :comment %>
   </div>
+<%= show_simple_captcha(:object=>"post") %>
   <div class="actions">
     <%= f.submit %>
   </div>
